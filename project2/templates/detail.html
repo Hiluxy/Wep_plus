@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            get_list()
+        })
+
+        function get_list() {
+            $.ajax({
+
+            })
+        }
+    </script>
+</head>
+<body>
+<h1>상세페이지</h1>
+<button onclick=" window.location.href='/'">메인으로 돌아가기</button>
+<ul id="gu-list">
+    {% for row in rows %}
+        {% set gu_name = row["MSRSTE_NM"] %}
+        {% set gu_mise = row["IDEX_MVL"] %}
+        <li>{{gu_name}}:{{gu_mise|int}}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
